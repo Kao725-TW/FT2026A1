@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>峴港．會安｜中越家族旅遊行程</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1E3A54;
+    --ink-soft:#3C5A74;
+    --paper:#F6FAFD;
+    --paper-deep:#EAF3F9;
+    --mint:#3E8FB0;
+    --mint-deep:#296E8C;
+    --mint-soft:#E1F0F6;
+    --coral:#5B7FA6;
+    --coral-deep:#3E6488;
+    --coral-soft:#E7EEF6;
+    --gold:#6FB3C9;
+    --gold-soft:#E9F5F8;
+    --line:#DCE9F1;
+    --muted:#5C7488;
+    --shadow: 0 8px 24px rgba(30,80,110,0.10);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;font-size:16px;} /* 1rem = 12pt baseline */
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Noto Sans TC','Be Vietnam Pro',sans-serif;
+    line-height:1.75;
+    font-size:1rem; /* 12pt */
+  }
+  h1,h2,h3,.serif{font-family:'Noto Serif TC',serif;}
+  .eyebrow{
+    font-family:'Be Vietnam Pro',sans-serif;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-size:1rem; /* ~13pt */
+    font-weight:700;
+  }
+  a{color:inherit;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(ellipse 900px 500px at 15% -10%, rgba(62,143,176,0.22), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 95% 10%, rgba(70,130,170,0.20), transparent 55%),
+      linear-gradient(180deg,#FBFCF8 0%, #F1F6EE 55%, #EAF3EB 100%);
+    color:var(--ink);
+    padding:88px 24px 110px;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-inner{max-width:920px;margin:0 auto;position:relative;z-index:2;text-align:center;}
+  .hero .eyebrow{color:var(--coral-deep);}
+  .hero h1{
+    font-size:clamp(2.6rem,7vw,4.4rem);
+    margin:14px 0 6px;
+    font-weight:900;
+    letter-spacing:.02em;
+    color:var(--ink);
+  }
+  .hero h1 span{color:var(--mint-deep);}
+  .hero .sub{
+    font-size:clamp(1.15rem,2.4vw,1.4rem);
+    color:var(--ink-soft);
+    font-family:'Noto Serif TC',serif;
+    margin:0 0 30px;
+  }
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:8px;
+  }
+  .pill{
+    border:1px solid var(--line);
+    background:#ffffffcc;
+    padding:8px 18px;
+    border-radius:999px;
+    font-size:1rem; /* ~13.5pt */
+    color:var(--ink-soft);
+    box-shadow:0 2px 8px rgba(63,110,100,0.06);
+  }
+  .pill b{color:var(--ink);}
+  .hero-note{
+    margin-top:26px;
+    display:inline-block;
+    font-size:1rem;
+    color:var(--coral-deep);
+    border-top:1px solid var(--line);
+    padding-top:14px;
+    font-weight:600;
+  }
+
+  .lightstring{
+    position:absolute;left:0;right:0;bottom:-2px;height:60px;z-index:1;
+    display:flex;justify-content:space-evenly;align-items:flex-start;
+    opacity:.9;
+  }
+  .lightstring .bulb{
+    width:9px;height:9px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #FFF3D6, var(--gold) 60%, var(--coral-deep) 100%);
+    box-shadow:0 0 10px 3px rgba(111,179,201,0.45);
+    margin-top:10px;
+  }
+
+  /* ---------- SECTION WRAP ---------- */
+  section{max-width:980px;margin:0 auto;padding:60px 24px;}
+  .section-head{margin-bottom:34px;}
+  .section-head .eyebrow{color:var(--mint-deep);}
+  .section-head h2{font-size:clamp(1.65rem,3.6vw,2.15rem);margin:8px 0 0;color:var(--ink);}
+
+  /* ---------- FLIGHT + HOTEL CARDS ---------- */
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  @media (max-width:760px){.grid-2{grid-template-columns:1fr;}}
+
+  .card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:24px 26px;
+    box-shadow:var(--shadow);
+  }
+  .flight-card .flight-head{
+    display:flex;align-items:center;justify-content:space-between;
+    margin-bottom:14px;
+  }
+  .flight-code{font-family:'Be Vietnam Pro';font-weight:700;font-size:1.25rem;color:var(--ink);}
+  .flight-tag{
+    font-size:1rem;font-weight:700;padding:5px 12px;border-radius:999px;
+    background:var(--mint-soft);color:var(--mint-deep);
+  }
+  .flight-tag.back{background:var(--coral-soft);color:var(--coral-deep);}
+  .route{display:flex;align-items:center;gap:14px;margin:16px 0 10px;}
+  .route .airport{flex:1;}
+  .route .code{font-size:1.6rem;font-weight:900;font-family:'Noto Serif TC';color:var(--ink);}
+  .route .time{font-size:1rem;color:var(--muted);margin-top:4px;}
+  .route .plane-line{flex:0 0 60px;text-align:center;color:var(--gold);font-size:1.3rem;}
+  .flight-meta{font-size:1rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:12px;margin-top:6px;}
+  .flight-meta span{display:inline-block;margin-right:16px;}
+
+  .hotel-card{display:flex;flex-direction:column;gap:10px;}
+  .hotel-dates{font-family:'Be Vietnam Pro';font-weight:700;font-size:1rem;color:var(--coral-deep);letter-spacing:.03em;}
+  .hotel-name{font-size:1.2rem;font-weight:700;color:var(--ink);font-family:'Noto Serif TC';}
+  .hotel-area{font-size:1rem;color:var(--muted);}
+  .hotel-details{
+    margin-top:6px;padding-top:12px;border-top:1px dashed var(--line);
+    display:flex;flex-direction:column;gap:7px;
+  }
+  .hotel-details .row{display:flex;gap:8px;font-size:1rem;color:var(--ink-soft);}
+  .hotel-details .row .k{flex:0 0 auto;color:var(--mint-deep);}
+  .hotel-confirm{
+    margin-top:4px;display:inline-block;
+    background:var(--mint-soft);color:var(--mint-deep);
+    font-size:1rem;font-weight:700;padding:4px 12px;border-radius:8px;
+    width:fit-content;
+  }
+  .hotel-policy{font-size:1rem;color:var(--muted);}
+
+  /* ---------- DAY NAV ---------- */
+  .daynav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,252,248,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+    padding:12px 0;
+  }
+  .daynav-inner{
+    max-width:980px;margin:0 auto;padding:0 24px;
+    display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;
+  }
+  .daynav-inner::-webkit-scrollbar{display:none;}
+  .daynav a{
+    flex:0 0 auto;
+    font-family:'Be Vietnam Pro';font-weight:600;font-size:1rem;
+    padding:8px 14px;border-radius:999px;
+    background:#fff;border:1px solid var(--line);color:var(--ink-soft);
+    white-space:nowrap;text-decoration:none;
+    transition:.2s;
+  }
+  .daynav a:hover{background:var(--mint-deep);color:#fff;border-color:var(--mint-deep);}
+
+  /* ---------- TIMELINE (lantern string) ---------- */
+  .timeline{position:relative;padding-left:64px;}
+  .timeline::before{
+    content:"";position:absolute;left:20px;top:0;bottom:0;width:2px;
+    background:repeating-linear-gradient(180deg,var(--gold) 0 10px, transparent 10px 16px);
+    opacity:.6;
+  }
+  .day-block{position:relative;margin-bottom:56px;scroll-margin-top:80px;}
+  .day-block:last-child{margin-bottom:0;}
+
+  .lantern{
+    position:absolute;left:-64px;top:0;width:80px;height:80px;
+  }
+  .lantern svg{width:100%;height:100%;display:block;filter:drop-shadow(0 4px 8px rgba(63,110,100,0.18));}
+
+  .day-card{
+    background:#fff;border:1px solid var(--line);border-radius:18px;
+    padding:26px 28px 22px;box-shadow:var(--shadow);
+  }
+  .day-title-row{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px;margin-bottom:4px;}
+  .day-date{font-family:'Be Vietnam Pro';font-weight:700;font-size:1rem;color:var(--coral-deep);letter-spacing:.03em;}
+  .day-title{font-family:'Noto Serif TC';font-weight:700;font-size:1.35rem;color:var(--ink);margin:2px 0 16px;}
+
+  table.schedule{width:100%;border-collapse:collapse;}
+  table.schedule tr{border-top:1px solid var(--paper-deep);}
+  table.schedule tr:first-child{border-top:none;}
+  table.schedule td{padding:11px 0;vertical-align:top;font-size:1rem;}
+  table.schedule td.time{
+    width:118px;font-family:'Be Vietnam Pro';font-weight:700;color:var(--mint-deep);white-space:nowrap;padding-right:14px;
+  }
+  table.schedule td.activity{color:var(--ink);}
+
+  .tip{
+    margin-top:16px;
+    background:var(--mint-soft);
+    border-left:3px solid var(--mint-deep);
+    padding:11px 14px;border-radius:0 10px 10px 0;
+    font-size:1rem;color:#2C5147;
+  }
+
+  /* ---------- TIPS SECTION ---------- */
+  .tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media (max-width:760px){.tips-grid{grid-template-columns:1fr;}}
+  .tip-card{
+    background:#fff;border:1px solid var(--line);border-radius:14px;
+    padding:18px 20px;display:flex;gap:14px;align-items:flex-start;
+    box-shadow:var(--shadow);
+  }
+  .tip-icon{
+    flex:0 0 auto;width:40px;height:40px;border-radius:10px;
+    background:var(--gold-soft);display:flex;align-items:center;justify-content:center;
+    font-size:1.15rem;color:var(--coral-deep);
+  }
+  .tip-card p{margin:0;font-size:1rem;color:var(--ink);}
+  .tip-card b{color:var(--mint-deep);}
+
+  footer{
+    text-align:center;padding:48px 24px 60px;color:var(--muted);font-size:1rem;
+    border-top:1px solid var(--line);
+  }
+  footer .fam{font-family:'Noto Serif TC';font-size:1.05rem;color:var(--ink);margin-bottom:6px;}
+
+  @media(max-width:600px){
+    .timeline{padding-left:52px;}
+    .lantern{left:-52px;width:64px;height:64px;}
+    .day-card{padding:20px 18px 18px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Da Nang · Hoi An Family Trip</div>
+    <h1>峴港．<span>會安</span></h1>
+    <p class="sub">中越家族旅遊行程</p>
+    <div class="hero-meta">
+      <span class="pill">📅 <b>2026/8/3（一）— 8/9（日）</b> 7天6夜</span>
+    </div>
+  </div>
+  <div class="lightstring" id="lightstring"></div>
+</div>
+
+<div class="daynav" id="daynav">
+  <div class="daynav-inner" id="daynavInner"></div>
+</div>
+
+<section id="flights">
+  <div class="section-head">
+    <div class="eyebrow">Flights</div>
+    <h2>航班資訊</h2>
+  </div>
+  <div class="grid-2">
+    <div class="card flight-card">
+      <div class="flight-head">
+        <div class="flight-code">JX-0703</div>
+        <div class="flight-tag">去程・星宇航空</div>
+      </div>
+      <div class="route">
+        <div class="airport">
+          <div class="code">TPE</div>
+          <div class="time">桃園機場 T2<br>2026-08-03　15:45</div>
+        </div>
+        <div class="plane-line">✈︎</div>
+        <div class="airport" style="text-align:right;">
+          <div class="code">DAD</div>
+          <div class="time">峴港機場 T2<br>2026-08-03　17:35</div>
+        </div>
+      </div>
+      <div class="flight-meta">
+        <span>PNR：EU6YVM</span><span>飛行 2H50M</span><span>經濟艙 Q</span><span>行李1件</span>
+      </div>
+    </div>
+
+    <div class="card flight-card">
+      <div class="flight-head">
+        <div class="flight-code">CI-0790</div>
+        <div class="flight-tag back">回程・中華航空</div>
+      </div>
+      <div class="route">
+        <div class="airport">
+          <div class="code">DAD</div>
+          <div class="time">峴港機場 T2<br>2026-08-09　17:30</div>
+        </div>
+        <div class="plane-line">✈︎</div>
+        <div class="airport" style="text-align:right;">
+          <div class="code">TPE</div>
+          <div class="time">桃園機場 T1<br>2026-08-09　21:20</div>
+        </div>
+      </div>
+      <div class="flight-meta">
+        <span>PNR：EU5CRI</span><span>飛行 2H50M</span><span>經濟艙 R</span><span>行李1件</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hotels">
+  <div class="section-head">
+    <div class="eyebrow">Stays</div>
+    <h2>飯店資訊</h2>
+  </div>
+  <div class="grid-2">
+    <div class="card hotel-card">
+      <div class="hotel-dates">8/3（一）→ 8/6（四）・共3晚</div>
+      <div class="hotel-name">Wink峴港河畔凱悅奕選酒店</div>
+      <div class="hotel-area">Wink Danang Riverside ｜峴港市區，鄰近韓江</div>
+      <div class="hotel-details">
+        <div class="row"><span class="k">📍</span><span>351 Tran Hung Dao Street, Danang, 550000</span></div>
+        <div class="row"><span class="k">📞</span><span>+84 236 3572 888</span></div>
+        <div class="row"><span class="k">🛏️</span><span>雙臥室河景套房・1間客房・4名成人</span></div>
+      </div>
+      <div class="hotel-confirm">確認編號：59947270</div>
+      <div class="hotel-policy">⚠️ 預訂時須支付100%訂金且不可退款</div>
+    </div>
+    <div class="card hotel-card">
+      <div class="hotel-dates">8/6（四）→ 8/9（日）・共3晚</div>
+      <div class="hotel-name">峴港－會安珍珠島明珠飯店</div>
+      <div class="hotel-area">The Pearl Hoi An ｜會安古鎮周邊</div>
+      <div class="hotel-details">
+        <div class="row"><span class="k">🛏️</span><span>雙臥室行政套房・含早餐</span></div>
+        <div class="row"><span class="k">🕒</span><span>入住 2026/8/6 15:00後・退房 2026/8/9 12:00前</span></div>
+        <div class="row"><span class="k">👥</span><span>住客：HsuMay Lin　共4位成人</span></div>
+        <div class="row"><span class="k">💰</span><span>總價：VND 28,245,221</span></div>
+      </div>
+      <div class="hotel-confirm">訂房代碼：5386044248</div>
+    </div>
+  </div>
+</section>
+
+<section id="itinerary">
+  <div class="section-head">
+    <div class="eyebrow">Day by Day</div>
+    <h2>每日行程</h2>
+  </div>
+  <div class="timeline" id="timeline"></div>
+</section>
+
+<section id="tips">
+  <div class="section-head">
+    <div class="eyebrow">Good to Know</div>
+    <h2>旅遊小提醒</h2>
+  </div>
+  <div class="tips-grid" id="tipsGrid"></div>
+</section>
+
+<footer>
+  <div class="fam">祝旅途順利，闔家平安愉快 🏮</div>
+  峴港．會安家族旅遊行程　｜　2026.08.03 – 08.09
+</footer>
+
+<script>
+const days = [
+  {
+    date:"8月3日", weekday:"一", title:"台北 → 峴港・入住 Wink 河畔酒店", type:"travel",
+    rows:[
+      ["13:00","台北桃園國際機場T2 集合，辦理登機手續"],
+      ["15:45","搭乘星宇航空 JX-0703 飛往峴港"],
+      ["17:35","抵達峴港國際機場T2，辦理入境（e-Visa電子簽證需提前線上申辦）"],
+      ["18:00–18:30","提領行李、通關，專車接送前往市區"],
+      ["19:00左右","抵達並入住 Wink峴港河畔凱悅奕選酒店"],
+      ["19:30","韓江畔晚餐（可請櫃檯推薦鄰近素食友善餐廳），飯後散步、早點休息調時差"],
+    ],
+    tip:"當天不排景點，抵達已近晚間，以休息、適應時差為主。"
+  },
+  {
+    date:"8月4日", weekday:"二", title:"巴拿山太陽世界 Ba Na Hills", type:"culture",
+    rows:[
+      ["08:00","飯店早餐後出發前往巴拿山（車程約45分鐘）"],
+      ["09:00–16:00","全天遊覽：世界紀錄纜車 → 黃金橋（佛手橋）→ 法國村 → 花園 → Fantasy Park"],
+      ["12:00","園區內午餐（自助餐廳素食選項充足）"],
+      ["16:30","搭纜車下山，專車返回峴港市區"],
+      ["19:00","市區晚餐、自由活動"],
+    ],
+    tip:"全程幾乎不需爬坡，纜車代勞，適合兩位長輩。建議早去避開人潮及午後山區陣雨。"
+  },
+  {
+    date:"8月5日", weekday:"三", title:"峴港市區精華一日遊", type:"nature",
+    rows:[
+      ["09:00","五行山（大理石山）：搭電梯上山，參觀山洞、佛寺"],
+      ["12:00","市區午餐（可預訂素食）"],
+      ["14:00","山茶半島＋靈應寺（巨大觀音像、視野遼闊）或美溪灘戲水放鬆，依當天體力擇一"],
+      ["18:00","返回酒店，晚餐後早點休息，準備隔天移動"],
+    ],
+    tip:"五行山主要以電梯代步，體力負擔不大；下午行程可視家人狀況彈性調整。"
+  },
+  {
+    date:"8月6日", weekday:"四", title:"峴港 → 會安・入住珍珠飯店", type:"travel",
+    rows:[
+      ["10:00","Wink酒店退房，行李寄放/裝車"],
+      ["10:15","專車前往會安（車程約45分鐘），沿途經美溪灘、大理石工藝村可視情況停留拍照"],
+      ["12:00","抵達會安，午餐（會安古鎮內素食餐廳選擇多）"],
+      ["14:00","入住峴港－會安珍珠島明珠飯店 The Pearl Hoi An"],
+      ["16:00","會安古鎮自由漫步：來遠橋（日本橋）、福建會館、古厝、裁縫店現場量身（隔日取件）"],
+      ["18:00起","古鎮華燈初上，掛滿燈籠氣氛絕佳，適合全家散步拍照，晚餐可就近品嚐當地小吃"],
+    ],
+  },
+  {
+    date:"8月7日", weekday:"五", title:"會安文化體驗日", type:"culture",
+    rows:[
+      ["09:00","椰林水上竹籃船體驗（沙船搖擺、抓蟹體驗，趣味性高）"],
+      ["12:00","午餐，或安排會安傳統做菜課（含市場採買＋料理教學，可客製全素／鍋邊素菜單）"],
+      ["15:00","自由活動、返飯店休息"],
+      ["19:00","會安古鎮秋盆河放水燈（蓮花燈許願），晚餐於古鎮內用餐"],
+    ],
+    tip:"若體力許可，也可將竹籃船替換為美山聖地半日遊（占婆遺跡），但車程較遠、較曬。"
+  },
+  {
+    date:"8月8日", weekday:"六", title:"自由活動 ＋ 峴港龍橋噴火秀", type:"beach",
+    rows:[
+      ["09:00","安邦海灘（An Bang Beach）曬太陽戲水，或飯店泳池／按摩放鬆"],
+      ["13:00","會安周邊採買伴手禮（咖啡、椰子糖、藤編工藝品），並取回訂製服裝"],
+      ["17:00","專車返回峴港市區，晚餐"],
+      ["20:30","前往龍橋現場卡位（橋頭視野最佳，噴水階段前排會被噴濕請留意）"],
+      ["21:00","龍橋週六噴火噴水秀（約15–20分鐘）"],
+      ["21:30","步行至山茶夜市，逛街品嚐當地小吃，輕鬆收尾"],
+    ],
+  },
+  {
+    date:"8月9日", weekday:"日", title:"會安 → 峴港機場 → 台北", type:"travel",
+    rows:[
+      ["09:00","飯店自由活動（游泳池、按摩）或會安古鎮最後採買"],
+      ["12:00","珍珠飯店退房，會安古鎮內簡單用餐"],
+      ["13:30–14:00","專車出發前往峴港國際機場（車程約45分鐘，如遇假日車潮請提前出發）"],
+      ["14:30前","抵達機場，辦理登機（國際航班建議提前3小時抵達）"],
+      ["17:30","搭乘中華航空 CI-0790 飛返台北"],
+      ["21:20","抵達桃園國際機場T1，結束7天6夜中越家族之旅"],
+    ],
+    tip:"返程日下午需保留充裕交通與安檢緩衝時間，行程安排以輕鬆採買為主，避免安排耗體力活動。"
+  },
+];
+
+const typeColor = {
+  travel:   {main:"#7C93A8"},
+  culture:  {main:"#3E8FB0"},
+  nature:   {main:"#296E8C"},
+  beach:    {main:"#5B7FA6"},
+};
+
+function lanternSVG(n, color){
+  return `
+  <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+    <line x1="40" y1="0" x2="40" y2="10" stroke="#7FA8BE" stroke-width="2"/>
+    <ellipse cx="40" cy="14" rx="10" ry="4" fill="#5E8BA3"/>
+    <path d="M22 18 Q40 8 58 18 L58 56 Q40 70 22 56 Z" fill="${color}" opacity="0.95"/>
+    <path d="M22 18 Q40 8 58 18" fill="none" stroke="#fff" stroke-opacity="0.45" stroke-width="1.5"/>
+    <line x1="26" y1="20" x2="26" y2="55" stroke="#fff" stroke-opacity="0.35" stroke-width="1"/>
+    <line x1="40" y1="16" x2="40" y2="60" stroke="#fff" stroke-opacity="0.35" stroke-width="1"/>
+    <line x1="54" y1="20" x2="54" y2="55" stroke="#fff" stroke-opacity="0.35" stroke-width="1"/>
+    <ellipse cx="40" cy="60" rx="9" ry="3.5" fill="#5E8BA3"/>
+    <text x="40" y="42" font-size="17" font-weight="700" fill="#fff" text-anchor="middle" font-family="Be Vietnam Pro, sans-serif">${n}</text>
+  </svg>`;
+}
+
+const timeline = document.getElementById('timeline');
+const daynavInner = document.getElementById('daynavInner');
+const lightstring = document.getElementById('lightstring');
+
+days.forEach((d, i) => {
+  const c = typeColor[d.type];
+  const id = "day"+(i+1);
+
+  const a = document.createElement('a');
+  a.href = "#"+id;
+  a.textContent = "Day "+(i+1)+"　"+d.date;
+  daynavInner.appendChild(a);
+
+  const block = document.createElement('div');
+  block.className = "day-block";
+  block.id = id;
+
+  const rowsHtml = d.rows.map(r => `<tr><td class="time">${r[0]}</td><td class="activity">${r[1]}</td></tr>`).join("");
+  const tipHtml = d.tip ? `<div class="tip">💡 ${d.tip}</div>` : "";
+
+  block.innerHTML = `
+    <div class="lantern">${lanternSVG(i+1, c.main)}</div>
+    <div class="day-card">
+      <div class="day-title-row">
+        <span class="day-date">${d.date}（${d.weekday}）</span>
+      </div>
+      <div class="day-title">${d.title}</div>
+      <table class="schedule">${rowsHtml}</table>
+      ${tipHtml}
+    </div>
+  `;
+  timeline.appendChild(block);
+
+  const bulb = document.createElement('div');
+  bulb.className = "bulb";
+  lightstring.appendChild(bulb);
+});
+
+for(let i=0;i<6;i++){
+  const bulb = document.createElement('div');
+  bulb.className = "bulb";
+  bulb.style.opacity = 0.5;
+  lightstring.appendChild(bulb);
+}
+
+const tips = [
+  {icon:"🛂", text:"越南對台灣護照<b>非免簽</b>，須提前線上申辦電子簽證（e-Visa），出發前請再次確認效期與資料無誤。"},
+  {icon:"🌧️", text:"8月為越南中部雨季前緣，午後偶有短暫陣雨，建議攜帶輕便雨衣或摺疊傘。"},
+  {icon:"🥢", text:"太太飲食為<b>鍋邊素／隨緣素</b>，建議準備中英越三語對照的飲食需求小卡，會安古鎮素食餐廳選擇比峴港市區更豐富。"},
+  {icon:"🚡", text:"巴拿山、龍橋秀建議<b>提早出發或卡位</b>，避開人潮，對長輩體力較友善。"},
+  {icon:"🧳", text:"兩間飯店間的行李接駁與市區間移動，建議統一由旅行社或包車司機安排，較自駕拖行李輕鬆。"},
+  {icon:"⏱️", text:"8/9為返程日，下午時段需保留充裕交通與安檢緩衝時間，行程安排以輕鬆採買為主，避免安排耗體力活動。"},
+];
+const tipsGrid = document.getElementById('tipsGrid');
+tips.forEach(t => {
+  const el = document.createElement('div');
+  el.className = "tip-card";
+  el.innerHTML = `<div class="tip-icon">${t.icon}</div><p>${t.text}</p>`;
+  tipsGrid.appendChild(el);
+});
+</script>
+</body>
+</html>
