@@ -227,6 +227,24 @@
     font-size:1rem;color:#2C5147;
   }
 
+  .meals{
+    margin-top:16px;
+    background:var(--paper-deep);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:14px 16px;
+  }
+  .meals-title{
+    font-family:'Be Vietnam Pro';font-weight:700;font-size:1rem;
+    color:var(--coral-deep);margin-bottom:8px;
+  }
+  .meal-row{display:flex;gap:10px;align-items:flex-start;font-size:1rem;color:var(--ink);padding:3px 0;}
+  .meal-tag{
+    flex:0 0 auto;width:28px;height:22px;line-height:22px;text-align:center;
+    background:var(--mint-deep);color:#fff;border-radius:6px;
+    font-size:1rem;font-weight:700;
+  }
+
   /* ---------- TIPS SECTION ---------- */
   .tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   @media (max-width:760px){.tips-grid{grid-template-columns:1fr;}}
@@ -386,18 +404,20 @@ const days = [
       ["17:35","抵達峴港國際機場T2，辦理入境（e-Visa電子簽證需提前線上申辦）"],
       ["18:00–18:30","提領行李、通關，專車接送前往市區"],
       ["19:00左右","抵達並入住 Wink峴港河畔凱悅奕選酒店"],
-      ["19:30","韓江畔晚餐（可請櫃檯推薦鄰近素食友善餐廳），飯後散步、早點休息調時差"],
+      ["19:30","韓江畔晚餐，飯後散步、早點休息調時差"],
     ],
+    meals:{b:"機上簡餐／視航班供餐", l:"機上簡餐／視航班供餐", d:"Bún Chả Cá Hờn（巷弄在地老店，酸甜開胃魚漿米線湯，約25,000–35,000 VND/碗）"},
     tip:"當天不排景點，抵達已近晚間，以休息、適應時差為主。"
   },
   {
     date:"8月4日", weekday:"二", title:"峴港市區精華一日遊", type:"nature",
     rows:[
       ["09:00","五行山（大理石山）：搭電梯上山，參觀山洞、佛寺"],
-      ["12:00","市區午餐（可預訂素食）"],
+      ["12:00","市區午餐"],
       ["14:00","山茶半島＋靈應寺（巨大觀音像、視野遼闊）或美溪灘戲水放鬆，依當天體力擇一"],
       ["18:00","返回酒店，晚餐後早點休息"],
     ],
+    meals:{b:"Wink飯店自助早餐", l:"Bánh Mì AA Happy Bread（韓市場旁排隊名店，越式法國麵包份量十足，約25,000–40,000 VND/份）", d:"Hải Sản Bé Mặn（美溪灘活海鮮大排檔，現撈現點魚貨自己挑，可控預算）"},
     tip:"五行山主要以電梯代步，體力負擔不大；下午行程可視家人狀況彈性調整。"
   },
   {
@@ -405,10 +425,11 @@ const days = [
     rows:[
       ["08:00","飯店早餐後出發前往巴拿山（車程約45分鐘）"],
       ["09:00–16:00","全天遊覽：世界紀錄纜車 → 黃金橋（佛手橋）→ 法國村 → 花園 → Fantasy Park"],
-      ["12:00","園區內午餐（自助餐廳素食選項充足）"],
+      ["12:00","園區內午餐"],
       ["16:30","搭纜車下山，專車返回峴港市區"],
       ["19:00","市區晚餐、自由活動，準備隔天移動"],
     ],
+    meals:{b:"Wink飯店自助早餐", l:"巴拿山園區自助餐廳（多國料理吃到飽，含素食區）", d:"Mì Quảng Bà Mua（峴港廣南麵老字號，湯汁濃郁不油膩，約30,000–50,000 VND/碗）"},
     tip:"全程幾乎不需爬坡，纜車代勞，適合兩位長輩。建議早去避開人潮及午後山區陣雨。"
   },
   {
@@ -416,11 +437,12 @@ const days = [
     rows:[
       ["10:00","Wink酒店退房，行李寄放/裝車"],
       ["10:15","專車前往會安（車程約45分鐘），沿途經美溪灘、大理石工藝村可視情況停留拍照"],
-      ["12:00","抵達會安，午餐（會安古鎮內素食餐廳選擇多）"],
+      ["12:00","抵達會安，午餐"],
       ["14:00","入住峴港－會安珍珠島明珠飯店 The Pearl Hoi An"],
       ["16:00","會安古鎮自由漫步：來遠橋（日本橋）、福建會館、古厝、裁縫店現場量身（隔日取件）"],
       ["18:00起","古鎮華燈初上，掛滿燈籠氣氛絕佳，適合全家散步拍照，晚餐可就近品嚐當地小吃"],
     ],
+    meals:{b:"Wink飯店自助早餐", l:"Quán Cao Lầu Bá Lễ（會安高樓麵創始老店之一，古鎮巷弄排隊名店，約25,000–35,000 VND/碗）", d:"White Rose Restaurant（白玫瑰蒸餃創始名店，會安三寶一次擁有，約60,000–100,000 VND/份）"},
   },
   {
     date:"8月7日", weekday:"五", title:"會安文化體驗日", type:"culture",
@@ -430,18 +452,23 @@ const days = [
       ["15:00","自由活動、返飯店休息"],
       ["19:00","會安古鎮秋盆河放水燈（蓮花燈許願），晚餐於古鎮內用餐"],
     ],
+    meals:{b:"Pearl飯店自助早餐", l:"Morning Glory Original（會安知名越式家常菜餐廳，明星主廚Trịnh Diễm Vy創立）／或做菜課現學現吃", d:"Miss Ly Cafe（會安三寶名店：白玫瑰、炸雲吞、高樓麵，裝潢優雅氣氛佳，約200,000–300,000 VND/2人份套餐）"},
     tip:"若體力許可，也可將竹籃船替換為美山聖地半日遊（占婆遺跡），但車程較遠、較曬。"
   },
   {
-    date:"8月8日", weekday:"六", title:"自由活動 ＋ 峴港龍橋噴火秀", type:"beach",
+    date:"8月8日", weekday:"六", title:"自由活動 ＋ 越式洗頭 ＋ 峴港龍橋噴火秀", type:"beach",
     rows:[
       ["09:00","安邦海灘（An Bang Beach）曬太陽戲水，或飯店泳池／按摩放鬆"],
       ["13:00","會安周邊採買伴手禮（咖啡、椰子糖、藤編工藝品），並取回訂製服裝"],
-      ["17:00","專車返回峴港市區，晚餐"],
+      ["17:00","專車返回峴港市區"],
+      ["17:30–19:00","越式洗頭經典體驗：洗髮＋掏耳＋肩頸按摩＋小黃瓜敷臉（約NT$150-250/人，超高CP值）"],
+      ["19:15","晚餐"],
       ["20:30","前往龍橋現場卡位（橋頭視野最佳，噴水階段前排會被噴濕請留意）"],
       ["21:00","龍橋週六噴火噴水秀（約15–20分鐘）"],
       ["21:30","步行至山茶夜市，逛街品嚐當地小吃，輕鬆收尾"],
     ],
+    meals:{b:"Pearl飯店自助早餐", l:"Soul Kitchen（An Bang海灘景觀餐廳，平價簡餐配沙灘躺椅，適合戲水後放鬆用餐）", d:"Bánh Xèo Bà Dưỡng（隱身巷弄的越式煎餅名店，在地人推薦排隊必吃，約50,000–80,000 VND/份）"},
+    tip:"越式洗頭建議選鄰近龍橋的店家（如 Luxury Man 或 So 1 Total Care），體驗完直接步行去看噴火秀，時間銜接最順。"
   },
   {
     date:"8月9日", weekday:"日", title:"會安 → 峴港機場 → 台北", type:"travel",
@@ -453,6 +480,7 @@ const days = [
       ["17:30","搭乘中華航空 CI-0790 飛返台北"],
       ["21:20","抵達桃園國際機場T1，結束7天6夜中越家族之旅"],
     ],
+    meals:{b:"Pearl飯店自助早餐", l:"Cơm Gà Bà Buội（會安招牌雞肉飯老店，走地雞肉質細嫩，約35,000–50,000 VND/份，出餐快適合返程日）", d:"機上簡餐／視航班供餐"},
     tip:"返程日下午需保留充裕交通與安檢緩衝時間，行程安排以輕鬆採買為主，避免安排耗體力活動。"
   },
 ];
@@ -498,6 +526,13 @@ days.forEach((d, i) => {
 
   const rowsHtml = d.rows.map(r => `<tr><td class="time">${r[0]}</td><td class="activity">${r[1]}</td></tr>`).join("");
   const tipHtml = d.tip ? `<div class="tip">💡 ${d.tip}</div>` : "";
+  const mealsHtml = d.meals ? `
+    <div class="meals">
+      <div class="meals-title">🍽️ 三餐建議</div>
+      <div class="meal-row"><span class="meal-tag">早</span><span>${d.meals.b}</span></div>
+      <div class="meal-row"><span class="meal-tag">午</span><span>${d.meals.l}</span></div>
+      <div class="meal-row"><span class="meal-tag">晚</span><span>${d.meals.d}</span></div>
+    </div>` : "";
 
   block.innerHTML = `
     <div class="lantern">${lanternSVG(i+1, c.main)}</div>
@@ -507,6 +542,7 @@ days.forEach((d, i) => {
       </div>
       <div class="day-title">${d.title}</div>
       <table class="schedule">${rowsHtml}</table>
+      ${mealsHtml}
       ${tipHtml}
     </div>
   `;
